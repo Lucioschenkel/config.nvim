@@ -1,19 +1,19 @@
+local set_theme = function (theme)
+  theme = theme or "midnight"
+
+  vim.cmd.colorscheme(theme)
+
+  -- this makes the background transparent
+  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+end
+
+
 return {
   {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-    config = function()
-      require("tokyonight").setup {
-        transparent = true,
-        styles = {
-          siderbar = "transparent",
-          floats = "transparent"
-        },
-      }
-
-      vim.cmd.colorscheme "tokyonight"
+    'dasupradyumna/midnight.nvim', lazy = false, priority = 1000,
+    config = function ()
+      set_theme("midnight")
     end
   },
   {
